@@ -1,0 +1,34 @@
+<template>
+    <div>
+        <h2 class="title">{{message}}</h2>
+        <button @click="btnClick">按鈕</button>
+        <h2>{{name}}</h2>
+        <Cpn/>
+    </div>
+</template>
+
+<script>
+    import Cpn from './Cpn'
+
+    export default {
+        name:"App",
+        components:{
+            Cpn
+        },
+        data(){
+            return {
+                message:"Hello Webpack from App.vue",
+                name:"Chris"
+            }
+        },
+        methods: {
+            btnClick(){}
+        }
+    }
+</script
+
+<style>
+    .title {
+        color: green;
+    }
+</style>

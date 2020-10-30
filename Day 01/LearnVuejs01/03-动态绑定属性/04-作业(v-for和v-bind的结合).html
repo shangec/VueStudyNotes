@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(m,index) in movies" v-on:click="ChangeColor(m,index)" :class="{'active':active}">{{index}}-{{m}}</li>
+    </ul>
+</div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                message:'你好啊',
+                movies:['神雕侠侣','寻秦记','笑傲江湖','火影隐者'],
+                active:false
+            },
+            methods:{
+                ChangeColor:function(m,index){
+                    this.active=this.movies[index]==m;
+                    console.log(m,index)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

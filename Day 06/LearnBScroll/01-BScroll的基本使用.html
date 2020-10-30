@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>title</title>
+    <style>
+        .content {
+            height: 200px;
+            background-color: red;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <ul>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+            <li>列表类别</li>
+        </ul>
+    </div>
+    <!-- <script src="https://unpkg.com/@better-scroll/core@latest/dist/core.js"></script> -->
+    <script src="./bscroll.js"></script>
+    <script>
+        // 默认情况下BScroll是不能实时监听滚动位置的
+        // probe 侦测 
+        // 0和1都是不侦测实时位置
+        // 2 手指拖动过程中侦测，手指离开后惯性不侦测
+        // 3 只要是滚动，都侦测
+        const bscroll = new BScroll(document.querySelector('.content'), {
+            probeType: 3,
+            pullUpLoad: true
+        })
+
+        // bscroll.on('scroll', (position) => {
+        //     console.log(position)
+        // })
+
+        bscroll.on('pullingUp', () => {
+            console.log('上拉加载更多')
+            // 发送网络请求，请求更多页的数据
+            // 等数据请求完成，并且将新的数据展示出来后
+
+            setTimeout(() => {
+                bscroll.finishPullUp();
+            }, 2000)
+        })
+    </script>
+</body>
+
+</html>
